@@ -1,0 +1,20 @@
+@media all and (min-width: 480px) {
+    .Settings {
+      padding: 60px 0;
+      
+    }
+  
+    .Settings form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+  .App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }

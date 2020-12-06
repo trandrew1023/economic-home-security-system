@@ -1,0 +1,38 @@
+stages:
+  - frontend-build
+  - frontend-deploy
+  - backend-deploy
+job 0:
+  stage: frontend-build
+  tags:
+    - frontend
+  before_script:
+    - docker info
+    - cd frontend/home-sec-sys/
+    - "docker login"
+  script:
+    - "docker build -t firextract/home-sec-sys:$CI_COMMIT_REF_SLUG ."
+    - "docker push firextract/home-sec-sys:$CI_COMMIT_REF_SLUG"
+job 1:
+  tags:
+    - frontend
+  stage: frontend-deploy
+  before_script:
+    - docker info
+    - cd frontend/home-sec-sys/
+    - "docker login"
+  script:
+    - sh docker-deploy.sh
+  only:
+    - master
+job 2:
+  stage: backend-deploy
+  tags:
+    - backend
+  before_script:
+    - docker info
+    - cd backend/
+  script:
+    - sh docker-deploy.sh
+  only:
+    - master

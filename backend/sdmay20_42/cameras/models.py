@@ -1,0 +1,14 @@
+import django
+from django.db import models
+
+
+class Camera(models.Model):
+    camera_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(django.contrib.auth.get_user_model(), on_delete=models.CASCADE, db_column='user_id')
+    device_type = models.IntegerField(null=False)
+    ip = models.CharField(max_length=24)
+    status = models.BooleanField(default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'camera'

@@ -1,0 +1,12 @@
+.wbutton button{
+    background-color: black;
+}
+
+.winput input{
+    color: black;
+}
+
+.winput button{
+    background-color: black;
+    width: 110px;
+}

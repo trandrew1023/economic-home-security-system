@@ -1,0 +1,5 @@
+djoser
+django
+djangorestframework
+djangorestframework_simplejwt
+mysqlclient

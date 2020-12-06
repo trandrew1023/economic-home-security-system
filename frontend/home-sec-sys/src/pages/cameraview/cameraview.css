@@ -1,0 +1,16 @@
+.webcam{
+    display: flex;
+    margin: auto 0;
+}
+
+.camView{ 
+}
+
+.size {
+    position: fixed;
+    margin: auto;
+  }
+
+  
+
+  
